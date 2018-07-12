@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map", style="height:600px; width=600px"></div>
+    <script>
+    var marker;
+      var map;
+      function initMap() {
+  var myLatLng = {lat: -25.363, lng: 131.044};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {lat:22.3964,lng:114.1095}
+  });
+
+  var marker = new google.maps.Marker({
+    position: {lat:22.286829,lng:114.1363283},
+    map: map,
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+    title: 'West Kowloon District Office'
+  });
+  google.maps.event.addListener(marker, 'click', toggleBounce);
+
+  var marker1 = new google.maps.Marker({
+    position: {lat:22.285764 ,lng : 114.150443},
+    map: map,
+    title: 'West Kowloon District Office'
+  });
+  var marker2 = new google.maps.Marker({
+    position: {lat:22.332139,lng:114.1679806},
+    map: map,
+    title: 'West Kowloon District Office'
+  });
+  var marker3 = new google.maps.Marker({
+    position: {lat:22.374012,lng : 114.1112939},
+    map: map,
+    title: 'West New Territories District Office'
+  });
+  var marker4 = new google.maps.Marker({
+    position: {lat:22.4707156,lng : 113.9979223},
+    map: map,
+    title: 'West New Territories District Office'
+  });
+  var marker5 = new google.maps.Marker({
+    position: {lat:22.3254763,lng :114.1619741},
+    map: map,
+    title: 'West Kowloon District Office'
+  });
+
+  }
+  function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
+
+
+
+
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAxvYSl4rieq7IwviKBA0X60hW8_h_64s&callback=initMap"
+    async defer></script>
+  </body>
+</html>

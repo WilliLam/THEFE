@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+      <title>Test</title>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="application/javascript">
+     $(document).ready(function(){
+        $.getJSON("/json",function(data){
+            console.log(data.j);
+            var items =  [];
+            $.each(data.j, function(key, value){
+            console.log(key);
+            console.log(value);
+            items.push('<li id=" ' + value.FirstName + '">' +value.title1+ ','+ value.title2+value.title3+value.title4    '</li>');
+        });
+        $('<ul/>', {
+            'class': 'interest-list',
+            html : items.join('')
+        }).appendTo('body')
+        });
+    });
+    </script>
+   </head>
+   <body>
+      <a href='/static/VID_20180708_143241.mp4'><p> Hi Kevin! </p></a>
+      <a href='/static/VID_20180708_143403.mp4'><p> Hi Kevin again! </p></a>
+   </body>
+</html>
+</html>
